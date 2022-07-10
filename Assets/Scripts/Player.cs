@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
     BoxCollider2D myBoxCollider2D;
     PolygonCollider2D myPolygonCollider2D;
 
+    float StartingGravityScale;
 // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +23,7 @@ public class Player : MonoBehaviour
         myAnimator = GetComponent<Animator>();
         myBoxCollider2D = GetComponent<BoxCollider2D>();
         myPolygonCollider2D = GetComponent<PolygonCollider2D>();
+        StartingGravityScale = myRigidBody2D.gravityScale;
     }
 
     // Update is called once per frame
@@ -37,17 +39,18 @@ public class Player : MonoBehaviour
         int ClimbLayer = LayerMask.GetMask("Climb");
         bool IsTouchingClimb = myBoxCollider2D.IsTouchingLayers(ClimbLayer);
 
-        if (!IsTouchingClimb) { 
-            myAnimator.SetBool("Climbing",false); 
-            myRigidBody2D.gravityScale = 1f;
-        return;}
-        
-        float controlThrow = CrossPlatformInputManager.GetAxis("Vertical");
+        if (IsTouchingClimb) { 
+            float controlThrow = CrossPlatformInputManager.GetAxis("Vertical");
 
-        Vector2 PlayerVerticalVelocity = new Vector2(myRigidBody2D.velocity.x, controlThrow * ClimbSpeed);
-        myRigidBody2D.gravityScale = 0f;
-        myRigidBody2D.velocity = PlayerVerticalVelocity;
-        myAnimator.SetBool("Climbing",true);
+            Vector2 PlayerVerticalVelocity = new Vector2(myRigidBody2D.velocity.x, controlThrow * ClimbSpeed);
+            myRigidBody2D.gravityScale = 0f;
+            myRigidBody2D.velocity = PlayerVerticalVelocity;
+            myAnimator.SetBool("Climbing",true);
+        }
+        else{
+             myAnimator.SetBool("Climbing",false); 
+            myRigidBody2D.gravityScale = StartingGravityScale;
+        }
     }   
 
     private void ChangingToClimbingState()
