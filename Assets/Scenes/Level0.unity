@@ -2052,6 +2052,40 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &880173337 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8711762137191477662, guid: 1f72ae3403d65bd4db5c6680daec19ff, type: 3}
+  m_PrefabInstance: {fileID: 8711762136592562636}
+  m_PrefabAsset: {fileID: 0}
+--- !u!60 &880173344
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 880173337}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.9333333, y: 1.9333333}
+    newSize: {x: 1.8125, y: 1.8125}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.31371713, y: -0.4937897}
+      - {x: 0.3125924, y: -0.3644774}
+      - {x: -0.15067267, y: -0.37364224}
+      - {x: -0.14719963, y: -0.5065031}
 --- !u!1 &1334923462
 GameObject:
   m_ObjectHideFlags: 0
@@ -2111,7 +2145,7 @@ GameObject:
   - component: {fileID: 1891484367}
   - component: {fileID: 1891484366}
   - component: {fileID: 1891484368}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Foreground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3240,6 +3274,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8919114339424763464, guid: 1f72ae3403d65bd4db5c6680daec19ff, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 5b11e035324b9f349b15201972bb8289, type: 2}
+    - target: {fileID: -8919114339424763464, guid: 1f72ae3403d65bd4db5c6680daec19ff, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1571997784, guid: 1f72ae3403d65bd4db5c6680daec19ff, type: 3}
+      propertyPath: JumpSpeed
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 8711762137191477657, guid: 1f72ae3403d65bd4db5c6680daec19ff, type: 3}
       propertyPath: m_RootOrder
       value: 2
