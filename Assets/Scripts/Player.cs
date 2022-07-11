@@ -40,12 +40,12 @@ public class Player : MonoBehaviour
         bool IsTouchingClimb = myBoxCollider2D.IsTouchingLayers(ClimbLayer);
 
         if (IsTouchingClimb) { 
+            myAnimator.SetBool("Climbing",true);
             float controlThrow = CrossPlatformInputManager.GetAxis("Vertical");
 
             Vector2 PlayerVerticalVelocity = new Vector2(myRigidBody2D.velocity.x, controlThrow * ClimbSpeed);
             myRigidBody2D.gravityScale = 0f;
             myRigidBody2D.velocity = PlayerVerticalVelocity;
-            myAnimator.SetBool("Climbing",true);
         }
         else{
              myAnimator.SetBool("Climbing",false); 
