@@ -25084,7 +25084,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.04, y: 11.25, z: -10}
+  m_LocalPosition: {x: 9.8, y: 11.25, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 284977983}
@@ -25438,7 +25438,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1560299792}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 16.836786, y: 13.44217, z: 29.319344}
+  m_LocalPosition: {x: 16.596786, y: 13.44217, z: 29.319344}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 106973372}
@@ -25523,7 +25523,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1879967442}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 16.836786, y: 13.44217, z: 29.319344}
+  m_LocalPosition: {x: 16.596786, y: 13.44217, z: 29.319344}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1251239676}
@@ -27781,7 +27781,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2067396121}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 16.836786, y: 13.44217, z: 29.319344}
+  m_LocalPosition: {x: 16.596786, y: 13.44217, z: 29.319344}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 537779636}
@@ -27952,6 +27952,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bomb
       objectReference: {fileID: 0}
+    - target: {fileID: 6592831075347832508, guid: 3375e1b8e0a2653489a2425d7a249333, type: 3}
+      propertyPath: m_Size.x
+      value: 3.728684
+      objectReference: {fileID: 0}
+    - target: {fileID: 6592831075347832508, guid: 3375e1b8e0a2653489a2425d7a249333, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.024062395
+      objectReference: {fileID: 0}
+    - target: {fileID: 6592831075347832514, guid: 3375e1b8e0a2653489a2425d7a249333, type: 3}
+      propertyPath: radius
+      value: 3.39
+      objectReference: {fileID: 0}
+    - target: {fileID: 6592831075347832514, guid: 3375e1b8e0a2653489a2425d7a249333, type: 3}
+      propertyPath: explosionForce.x
+      value: 100000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6592831075347832514, guid: 3375e1b8e0a2653489a2425d7a249333, type: 3}
+      propertyPath: explosionForce.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3375e1b8e0a2653489a2425d7a249333, type: 3}
 --- !u!1001 &8711762136592562636
@@ -27961,13 +27981,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1571997784, guid: 1f72ae3403d65bd4db5c6680daec19ff, type: 3}
+      propertyPath: AttackRadius
+      value: 1.15
+      objectReference: {fileID: 0}
     - target: {fileID: 8711762137191477657, guid: 1f72ae3403d65bd4db5c6680daec19ff, type: 3}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8711762137191477657, guid: 1f72ae3403d65bd4db5c6680daec19ff, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.04
+      value: 9.8
       objectReference: {fileID: 0}
     - target: {fileID: 8711762137191477657, guid: 1f72ae3403d65bd4db5c6680daec19ff, type: 3}
       propertyPath: m_LocalPosition.y
@@ -28008,6 +28032,14 @@ PrefabInstance:
     - target: {fileID: 8711762137191477662, guid: 1f72ae3403d65bd4db5c6680daec19ff, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 9079184893756417264, guid: 1f72ae3403d65bd4db5c6680daec19ff, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.43
+      objectReference: {fileID: 0}
+    - target: {fileID: 9079184893756417264, guid: 1f72ae3403d65bd4db5c6680daec19ff, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f72ae3403d65bd4db5c6680daec19ff, type: 3}
