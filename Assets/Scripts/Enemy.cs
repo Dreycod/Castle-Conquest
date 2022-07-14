@@ -6,23 +6,39 @@ public class Enemy : MonoBehaviour
 {   
     [SerializeField] float enemyRunSpeed = 5f;
     Rigidbody2D enemyRigidBody;
+    Animator myAnimator;
     // Start is called before the first frame update
     void Start()
     {
         enemyRigidBody = GetComponent<Rigidbody2D>();
+        myAnimator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        Run();
+        EnemyMovement();
     }
 
+    public void Dying()
+    {
+        myAnimator.SetTrigger("Die");
+        GetComponent<CapsuleCollider2D>().enabled = false;
+        GetComponent<BoxCollider2D>().enabled = false;
+        enemyRigidBody.bodyType = RigidbodyType2D.Static;
+        StartCoroutine(DeleteBody());
+    }
+
+    IEnumerator DeleteBody()
+    {
+        yield return new WaitForSeconds(2);
+        Destroy(gameObject);
+    }
     private void OnTriggerExit2D(Collider2D other) 
     {
         FlipSprite();
     }
-    private void Run()
+    private void EnemyMovement()
     {
         if (IsFacingLeft())
         {

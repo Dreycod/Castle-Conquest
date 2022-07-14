@@ -54,7 +54,7 @@ public class Player : MonoBehaviour
          Collider2D[] Enemies = Physics2D.OverlapCircleAll(HurtBox.position, AttackRadius, LayerMask.GetMask("Enemy"));
          foreach (Collider2D enemy in Enemies)
          {
-            print("HAHAHAH HIT DA BETCH");
+            enemy.GetComponent<Enemy>().Dying();
          }
        } 
     }
