@@ -79,11 +79,13 @@ public class Player : MonoBehaviour
         IsHurting = true; 
         
         StartCoroutine(StopHurting());
+
+        FindObjectOfType<GameSession>().ProcessPlayerDeath();
     }    
     
     IEnumerator StopHurting()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1.5f);
         IsHurting = false;
     }
     private void Climb()

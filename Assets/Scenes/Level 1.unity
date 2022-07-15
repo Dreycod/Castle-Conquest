@@ -3413,7 +3413,7 @@ Transform:
   m_Children:
   - {fileID: 519420032}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &350925331
 GameObject:
@@ -19636,7 +19636,7 @@ Transform:
   - {fileID: 1560299794}
   - {fileID: 1879967444}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
@@ -22082,7 +22082,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7378122350612182329, guid: 7a7ddca575e4a5141884fbe9104123e6, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7378122350612182329, guid: 7a7ddca575e4a5141884fbe9104123e6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -22224,7 +22224,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7378122350612182329, guid: 7a7ddca575e4a5141884fbe9104123e6, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7378122350612182329, guid: 7a7ddca575e4a5141884fbe9104123e6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -22279,13 +22279,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: ExitDoor
       objectReference: {fileID: 0}
-    - target: {fileID: 5318820509449655221, guid: fd3d0997ccc440343b68eac151b036d2, type: 3}
-      propertyPath: SecondsToLoad
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5318820509449655223, guid: fd3d0997ccc440343b68eac151b036d2, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5318820509449655223, guid: fd3d0997ccc440343b68eac151b036d2, type: 3}
       propertyPath: m_LocalPosition.x
