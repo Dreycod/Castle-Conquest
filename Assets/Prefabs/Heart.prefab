@@ -142,3 +142,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc5fea2efce710f4e9e6f28643a5e82c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HeartPickupSFX: {fileID: 8300000, guid: 4e21cebdbdc522745ab15dc5d2540603, type: 3}

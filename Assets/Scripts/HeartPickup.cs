@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class HeartPickup : MonoBehaviour
 {
-     private void OnTriggerEnter2D(Collider2D other) {
+    [SerializeField] AudioClip HeartPickupSFX;
+    private void OnTriggerEnter2D(Collider2D other) {
+        
+        AudioSource.PlayClipAtPoint(HeartPickupSFX, Camera.main.transform.position);
         Destroy(gameObject);
     }
 }
