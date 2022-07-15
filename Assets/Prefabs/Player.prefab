@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4880898228891780288}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.31, y: 0.17145348, z: 0}
+  m_LocalPosition: {x: 0.43, y: 0.11, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8711762137191477657}
@@ -199,6 +199,7 @@ MonoBehaviour:
   runSpeed: 10
   JumpSpeed: 50
   ClimbSpeed: 10
+  AttackRadius: 1.15
   hitKick: {x: 50, y: 50}
   HurtBox: {fileID: 9079184893756417264}
 --- !u!60 &880173344
