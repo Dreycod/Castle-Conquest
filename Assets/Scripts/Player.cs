@@ -39,13 +39,26 @@ public class Player : MonoBehaviour
             Jump();
             Climb();
             Attack();
+
             if(myBoxCollider2D.IsTouchingLayers(LayerMask.GetMask("Enemy")))
             {
                 PlayerHit();  
             }
+            ExitLevel();
         }
     }
+    private void  ExitLevel()
+    {
+         int InteractibleLayer = LayerMask.GetMask("Interactible");
+        bool IsTouchingDoor = myBoxCollider2D.IsTouchingLayers(InteractibleLayer);
 
+        if (!IsTouchingDoor){return;};
+
+        if (CrossPlatformInputManager.GetButtonDown("Vertical"))
+        {
+            FindObjectOfType<Door>().StartLoadingNextLevel();
+        }
+    }
     private void Attack()
     {
        if(CrossPlatformInputManager.GetButtonDown("Fire1"))

@@ -6,18 +6,23 @@ public class Enemy : MonoBehaviour
 {   
     [SerializeField] float enemyRunSpeed = 5f;
     Rigidbody2D enemyRigidBody;
+    CapsuleCollider2D enemyCapsuleCollider;
     Animator myAnimator;
     // Start is called before the first frame update
     void Start()
     {
         enemyRigidBody = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
+        enemyCapsuleCollider = GetComponent<CapsuleCollider2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        EnemyMovement();
+        if(enemyCapsuleCollider.enabled)
+        {
+            EnemyMovement();
+        } 
     }
 
     public void Dying()

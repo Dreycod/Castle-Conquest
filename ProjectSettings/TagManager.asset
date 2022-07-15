@@ -18,7 +18,7 @@ TagManager:
   - World Confiner
   - Enemy
   - Bomb
-  - 
+  - Interactible
   - 
   - 
   - 
@@ -49,6 +49,9 @@ TagManager:
     locked: 0
   - name: Climb
     uniqueID: 4045620377
+    locked: 0
+  - name: Interactible
+    uniqueID: 2761712631
     locked: 0
   - name: Enemy
     uniqueID: 354303907
