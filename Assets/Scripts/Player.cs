@@ -27,7 +27,10 @@ public class Player : MonoBehaviour
         myAnimator = GetComponent<Animator>();
         myBoxCollider2D = GetComponent<BoxCollider2D>();
         myPolygonCollider2D = GetComponent<PolygonCollider2D>();
+
         StartingGravityScale = myRigidBody2D.gravityScale;
+
+        myAnimator.SetTrigger("Appearing");
     }
 
     // Update is called once per frame
@@ -47,6 +50,11 @@ public class Player : MonoBehaviour
             ExitLevel();
         }
     }
+
+    public void TurnOffRendered()
+    {
+        GetComponent<SpriteRenderer>().enabled = false;
+    }
     private void  ExitLevel()
     {
          int InteractibleLayer = LayerMask.GetMask("Interactible");
@@ -55,9 +63,15 @@ public class Player : MonoBehaviour
         if (!IsTouchingDoor){return;};
 
         if (CrossPlatformInputManager.GetButtonDown("Vertical"))
-        {
-            FindObjectOfType<Door>().StartLoadingNextLevel();
+        {   
+            myAnimator.SetTrigger("Disappearing");
         }
+    }
+
+    public void LoadNextLevel()
+    {
+        FindObjectOfType<Door>().StartLoadingNextLevel();
+        TurnOffRendered();
     }
     private void Attack()
     {
