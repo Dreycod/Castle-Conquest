@@ -11,12 +11,14 @@ public class Player : MonoBehaviour
     [SerializeField] float AttackRadius = 3f;
     [SerializeField] Vector2 hitKick = new Vector2(50f,50f);
     [SerializeField] Transform HurtBox;
+    [SerializeField] AudioClip jumpingSFX, AttackingSFX, GettingHitSFX, WalkingSFX;
 
    // public float Velocity = 300.0f;
     Rigidbody2D myRigidBody2D;
     Animator myAnimator;
     BoxCollider2D myBoxCollider2D;
     PolygonCollider2D myPolygonCollider2D;
+    AudioSource myAudioSource;
 
     float StartingGravityScale;
     bool IsHurting = false;
@@ -27,6 +29,7 @@ public class Player : MonoBehaviour
         myAnimator = GetComponent<Animator>();
         myBoxCollider2D = GetComponent<BoxCollider2D>();
         myPolygonCollider2D = GetComponent<PolygonCollider2D>();
+        myAudioSource = GetComponent<AudioSource>();
 
         StartingGravityScale = myRigidBody2D.gravityScale;
 
@@ -77,8 +80,9 @@ public class Player : MonoBehaviour
     {
        if(CrossPlatformInputManager.GetButtonDown("Fire1"))
        {
-         myAnimator.SetTrigger("Attacking");
+         myAudioSource.PlayOneShot(AttackingSFX);
          Collider2D[] Enemies = Physics2D.OverlapCircleAll(HurtBox.position, AttackRadius, LayerMask.GetMask("Enemy"));
+        myAnimator.SetTrigger("Attacking");
          foreach (Collider2D enemy in Enemies)
          {
             enemy.GetComponent<Enemy>().Dying();
@@ -91,7 +95,7 @@ public class Player : MonoBehaviour
 
         myAnimator.SetTrigger("Hitting");
         IsHurting = true; 
-        
+        myAudioSource.PlayOneShot(GettingHitSFX);
         StartCoroutine(StopHurting());
 
         FindObjectOfType<GameSession>().ProcessPlayerDeath();
@@ -139,6 +143,8 @@ public class Player : MonoBehaviour
         {
             Vector2 jumpVelocity = new Vector2(myRigidBody2D.velocity.x, JumpSpeed);
             myRigidBody2D.velocity = jumpVelocity;
+
+            myAudioSource.PlayOneShot(jumpingSFX);
         }
     }
     private void Run()
@@ -151,7 +157,22 @@ public class Player : MonoBehaviour
         ChangingToRunningState();
         // myRigidBody2D.velocity += new Vector2(Velocity, 0.0f);
     }
-
+    void StepsSFX()
+    {
+        bool playerMovingHorizontally = Mathf.Abs(myRigidBody2D.velocity.x) > Mathf.Epsilon;
+        
+        if(playerMovingHorizontally)
+        {
+            if(myBoxCollider2D.IsTouchingLayers(LayerMask.GetMask("Ground")))
+            {
+                myAudioSource.PlayOneShot(WalkingSFX);
+            }
+        }
+        else
+        {
+            myAudioSource.Stop();
+        }
+    }
     private void ChangingToRunningState()
     {
         bool RunningHorizontaly = Mathf.Abs(myRigidBody2D.velocity.x) > Mathf.Epsilon;

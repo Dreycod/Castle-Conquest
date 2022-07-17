@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class Door : MonoBehaviour
 {
     [SerializeField] float SecondsToLoad = 1f;
+    [SerializeField] AudioClip OpeningDoorSFX,ClosingDoorSFX;
     Animator myAnimator;
     BoxCollider2D myBoxCollider2D;
     // Start is called before the first frame update
@@ -21,6 +22,7 @@ public class Door : MonoBehaviour
    public void StartLoadingNextLevel()
    {
     myAnimator.SetTrigger("Close");
+    AudioSource.PlayClipAtPoint(ClosingDoorSFX, Camera.main.transform.position);
     StartCoroutine(LoadNextLevel());
    }
 
@@ -30,5 +32,10 @@ public class Door : MonoBehaviour
 
         var currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex + 1);
+    }
+
+    void PlayOpeningDoorSFX()
+    {
+      AudioSource.PlayClipAtPoint(OpeningDoorSFX, Camera.main.transform.position);
     }
 }
