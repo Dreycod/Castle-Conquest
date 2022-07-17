@@ -24,7 +24,6 @@ public class GameSession : MonoBehaviour
     
     private void Start()
     {
-        livesText.text = PlayerLives.ToString();
         scoreText.text = score.ToString();
     }
     public void AddToScore(int value)
@@ -41,7 +40,6 @@ public class GameSession : MonoBehaviour
             PlayerLives = 3;
         }
         UpdateLives();
-        livesText.text = PlayerLives.ToString();
     }
     public void ProcessPlayerDeath()
     {
@@ -64,7 +62,6 @@ public class GameSession : MonoBehaviour
     {
         PlayerLives--;
         UpdateLives();
-        livesText.text = PlayerLives.ToString();
     }
     private void UpdateLives()
     {
